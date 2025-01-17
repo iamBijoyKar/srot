@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Barlow, Knewave } from 'next/font/google'
 import Header from '@/components/Home/Header'
 import HeroFlowNodes from '@/components/Home/HeroFlowNodes'
-import FeatureSection from '@/components/Home/FeatureSection'
+import FeatureSection from '@/components/Home/Feature/FeatureSection'
 
 const barlow = Barlow({ weight: '800', subsets: ['latin'] })
 const knewave = Knewave({ weight: '400', subsets: ['latin'] })
