@@ -5,10 +5,9 @@ import { FaArrowPointer } from 'react-icons/fa6'
 import { FaGithub } from 'react-icons/fa'
 import FeatureCard from '@/components/Home/Feature/FeatureCard'
 import FeatureBgCard from '@/components/Home/Feature/FeatureBgCard'
+import MultipleNodeSupportFeature from './MultipleNodeSupportFeature'
 
 import dragImg from '@/assets/drag-and-drop.png'
-import textBoxImg from '@/assets/text-box.png'
-import imgboxImg from '@/assets/imgbox.png'
 import spiralImg from '@/assets/spiral.png'
 import trianglesImg from '@/assets/triangles.png'
 
@@ -67,18 +66,9 @@ export default function FeatureSection() {
           </FeatureCard>
         </div>
         <div className="col-span-2 row-span-1">
-          <FeatureCard
-            title="Multiple Node Support"
-            description="Multiple types of nodes to support different types of workflows. Notes, Images, Videos, and more."
-            position="top"
-          >
-            <div className="relative w-full h-[100px]">
-              <span className=" absolute top-1/3 right-1/2">
-                <Image src={textBoxImg} width={50} height={40} alt="drag" />
-              </span>
-              <span className="absolute top-4 left-5 p-[2px] rounded bg-slate-200">
-                <Image src={imgboxImg} width={70} height={70} alt="drag" />
-              </span>
+          <FeatureCard title="" description="" position="top">
+            <div className=" w-full h-full ">
+              <MultipleNodeSupportFeature />
             </div>
           </FeatureCard>
         </div>
