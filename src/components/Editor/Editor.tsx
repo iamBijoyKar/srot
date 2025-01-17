@@ -3,33 +3,30 @@
 import React, { useCallback } from 'react'
 import {
   ReactFlow,
+  ReactFlowProvider,
   MiniMap,
   Controls,
   Background,
   BackgroundVariant,
   useNodesState,
   useEdgesState,
-  addEdge
+  addEdge,
+  useOnSelectionChange
 } from '@xyflow/react'
-import TextNode from './Nodes/TextNode'
+import { nodeTypes } from './NodeTypes'
+import Sidebar from './Sidebar/Sidebar'
+
 import '@xyflow/react/dist/style.css'
 
 const initialNodes = [
-  { id: '1', position: { x: 0, y: 0 }, data: { label: '1' } },
-  { id: '2', position: { x: 0, y: 100 }, data: { label: '2' } },
-  { id: '3', position: { x: 0, y: 200 }, data: { label: '3' } },
   {
     id: '4',
     position: { x: 0, y: 300 },
-    data: { value: '4', text: 'hello' },
+    data: { text: 'hello' },
     type: 'textNode'
   }
 ]
 const initialEdges = [{ id: 'e1-2', source: '1', target: '2' }]
-
-const nodeTypes = {
-  textNode: TextNode
-}
 
 export default function Editor() {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes)
@@ -40,20 +37,39 @@ export default function Editor() {
     [setEdges]
   )
 
+  const addNewNode = useCallback(
+    ({ type }: { type: string }) => {
+      const newNode = {
+        id: (nodes.length + 1).toString(),
+        position: { x: 10, y: 10 },
+        data: { value: (nodes.length + 1).toString(), text: '' },
+        type: type
+      }
+      setNodes((prev) => prev.concat(newNode))
+    },
+    [nodes, setNodes]
+  )
+
   return (
-    <div style={{ width: '100%', height: 'calc(100vh - 32px)' }}>
-      <ReactFlow
-        nodes={nodes}
-        edges={edges}
-        onNodesChange={onNodesChange}
-        onEdgesChange={onEdgesChange}
-        onConnect={onConnect}
-        nodeTypes={nodeTypes}
+    <ReactFlowProvider>
+      <div
+        style={{ width: '100%', height: 'calc(100vh - 40px)' }}
+        className="flex"
       >
-        <Controls />
-        <MiniMap />
-        <Background variant={BackgroundVariant.Dots} gap={12} size={1} />
-      </ReactFlow>
-    </div>
+        <Sidebar addNewNode={addNewNode} />
+        <ReactFlow
+          nodes={nodes}
+          edges={edges}
+          onNodesChange={onNodesChange}
+          onEdgesChange={onEdgesChange}
+          onConnect={onConnect}
+          nodeTypes={nodeTypes}
+        >
+          <Controls />
+          <MiniMap />
+          <Background variant={BackgroundVariant.Dots} gap={12} size={1} />
+        </ReactFlow>
+      </div>
+    </ReactFlowProvider>
   )
 }
