@@ -2,3 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --brand-purple: 134 93 255;
+    --brand-pink: 227 132 255;
+    --brand-light-pink: 255 163 253;
+    --primary-bg: 251 251 251;
+    --secondary-bg: 232 232 232;
+    --ternary-bg: 187 191 202;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-bg: 25 24 37;
+    --secondary-bg: 73 84 100;
+    --ternary-bg: 43 43 43;
+  }
+}
