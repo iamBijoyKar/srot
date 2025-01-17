@@ -29,7 +29,7 @@ export default function TextUpdaterNode(props: NodeProps<TextNodeProps>) {
       setShowInput(true)
       inputRef.current?.focus()
     }
-  }, [])
+  }, [props.selected])
 
   useEffect(() => {
     if (props.selected === false) {
