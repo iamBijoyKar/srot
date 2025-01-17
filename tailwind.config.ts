@@ -20,7 +20,10 @@ const config: Config = {
       'brand-light-pink': 'rgb(var(--brand-light-pink))',
       'primary-bg': 'rgb(var(--primary-bg))',
       'secondary-bg': 'rgb(var(--secondary-bg))',
-      'ternary-bg': 'rgb(var(--ternary-bg))'
+      'ternary-bg': 'rgb(var(--ternary-bg))',
+      'primary-text': 'rgb(var(--primary-text))',
+      'secondary-text': 'rgb(var(--secondary-text))',
+      'ternary-text': 'rgb(var(--ternary-text))'
     }
   },
   plugins: []
