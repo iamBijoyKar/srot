@@ -17,8 +17,8 @@ export default function TextUpdaterNode(props: NodeProps<TextNodeProps>) {
   const inputRef = useRef<HTMLTextAreaElement>(null)
   const [text, setText] = useState(props.data.text)
   const [showInput, setShowInput] = useState(false)
-  const width = 200
-  const height = 100
+  const [width, setWidth] = useState(200)
+  const [height, setHeight] = useState(100)
 
   const onChange = useCallback((event: any) => {
     setText(event.target.value)
