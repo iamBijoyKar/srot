@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Barlow, Knewave, Chela_One, Press_Start_2P } from 'next/font/google'
 import { FaArrowPointer } from 'react-icons/fa6'
 import { FaGithub } from 'react-icons/fa'
+import { MdOutlineCelebration } from 'react-icons/md'
 import FeatureCard from '@/components/Home/Feature/FeatureCard'
 import FeatureBgCard from '@/components/Home/Feature/FeatureBgCard'
 import MultipleNodeSupportFeature from './MultipleNodeSupportFeature'
@@ -10,6 +11,7 @@ import MultipleNodeSupportFeature from './MultipleNodeSupportFeature'
 import dragImg from '@/assets/drag-and-drop.png'
 import spiralImg from '@/assets/spiral.png'
 import trianglesImg from '@/assets/triangles.png'
+import exportImg from '@/assets/export.png'
 
 const barlow = Barlow({ weight: '800', subsets: ['latin'] })
 const knewave = Knewave({ weight: '400', subsets: ['latin'] })
@@ -102,16 +104,19 @@ export default function FeatureSection() {
 
         <div className="col-span-2 row-span-1">
           <FeatureCard
-            title="Drag and Drop Editor"
-            description="Create workflows with an easy-to-use drag-and-drop interface—no coding required."
+            title="Export Yours Workflows in Multiple Formats"
+            description="Export your workflows in multiple formats like PNG, SVG, and PDF. Share your workflows with anyone, anywhere."
             position="top"
           >
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center motion-preset-stretch">
               <Image
-                src={dragImg}
+                src={exportImg}
                 width={100}
                 height={100}
-                className="rounded-xl drop-shadow-[0_35px_35px_rgb(var(--brand-light-pink))] transition-all duration-100"
+                className="rounded-xl transition-all duration-100"
+                style={{
+                  filter: 'drop-shadow(0 0 30px rgba(117, 78, 26, 0.5))'
+                }}
                 alt="drag"
               />
             </div>
@@ -120,18 +125,20 @@ export default function FeatureSection() {
 
         <div className="col-span-2 row-span-1">
           <FeatureCard
-            title="Customizable Workflows"
-            description="Create workflows that fit your needs. Customize your workflows with different types of nodes, colors, and more."
-            position="top"
+            title="Get Started Quickly without Spending Any Money"
+            description="Get started with Srot for free. No credit card required. Sign up for free and start creating workflows in minutes."
+            position="bottom"
           >
-            <div className="flex justify-center items-center">
-              <Image
-                src={spiralImg}
-                width={100}
-                height={100}
-                className="rounded-xl drop-shadow-[0_35px_35px_rgb(var(--brand-light-pink))] transition-all duration-100"
-                alt="drag"
-              />
+            <div className="flex justify-center items-center mt-4">
+              <Link
+                href="/sign-up"
+                className="active:translate-y-1 transition-all duration-100"
+              >
+                <span className=" flex items-center gap-2 overflow-hidden text-xl text-white px-6 py-4 bg-gradient-to-r from-brand-purple to-brand-pink rounded-full hover:drop-shadow-[0_35px_35px_rgb(var(--brand-purple))] transition-all duration-100">
+                  <MdOutlineCelebration className="w-6 h-6" />
+                  <span className="hidden sm:block ">SignUp for Free</span>
+                </span>
+              </Link>
             </div>
           </FeatureCard>
         </div>
