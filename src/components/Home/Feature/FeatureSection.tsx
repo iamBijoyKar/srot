@@ -27,8 +27,8 @@ export default function FeatureSection() {
         Why Choose{' '}
         <span className={`text-brand-purple ${knewave.className}`}>Srot</span> ?
       </h1>
-      <div className="grid grid-cols-6 grid-rows-6 gap-3">
-        <div className="col-span-1 row-span-1">
+      <div className="grid grid-cols-6 grid-rows-3 xl:grid-rows-2 gap-3 h-[125vh] sm:h-full">
+        <div className="col-span-1 row-span-1 hidden lg:block lg:col-span-3 xl:col-span-1 ">
           <FeatureCard
             title="Drag and Drop Editor"
             description="Create workflows with an easy-to-use drag-and-drop interface—no coding required."
@@ -45,7 +45,7 @@ export default function FeatureSection() {
             </div>
           </FeatureCard>
         </div>
-        <div className="col-span-2 row-span-1">
+        <div className="col-start-1 col-span-6 row-span-1 sm:col-span-3 sm:row-span-1 lg:col-span-3 xl:col-span-2">
           <FeatureCard
             title="Collaboration Made Simple, With Real-Time Updates"
             description="Invite team members, share workflows, and manage tasks together in real time. Workflows are always up-to-date. Collaborate with your team in real time."
@@ -67,24 +67,24 @@ export default function FeatureSection() {
             </div>
           </FeatureCard>
         </div>
-        <div className="col-span-2 row-span-1">
+        <div className="hidden md:block col-span-3 row-span-1 xl:col-span-2">
           <FeatureCard title="" description="" position="top">
             <div className=" w-full h-full ">
               <MultipleNodeSupportFeature />
             </div>
           </FeatureCard>
         </div>
-        <div className="col-span-1 row-span-1">
+        <div className=" row-start-2 row-span-1 col-start-1 col-span-3 sm:col-span-3 sm:row-span-1 xl:col-span-1">
           <FeatureBgCard img={spiralImg}>
             <h2
-              className={`text-4xl text-center text-primary-text font-bold mb-4 ${chelaOne.className}`}
+              className={`text-2xl md:text-4xl text-center text-primary-text font-bold mb-4 ${chelaOne.className}`}
               style={{ textShadow: '0 0 5px rgba(0,0,0,0.3)' }}
             >
               Customizable Workflows
             </h2>
           </FeatureBgCard>
         </div>
-        <div className="col-span-2 row-span-1">
+        <div className="col-span-2 row-span-1 hidden sm:block sm:col-span-6 md:col-span-3 xl:col-span-2">
           <FeatureBgCard img={trianglesImg}>
             <div className="flex flex-col justify-center items-center">
               <h2
@@ -102,7 +102,7 @@ export default function FeatureSection() {
           </FeatureBgCard>
         </div>
 
-        <div className="col-span-2 row-span-1">
+        <div className=" row-start-2 row-span-1 col-start-4 col-span-3 sm:col-span-3 sm:row-span-1 xl:col-span-2">
           <FeatureCard
             title="Export Yours Workflows in Multiple Formats"
             description="Export your workflows in multiple formats like PNG, SVG, and PDF. Share your workflows with anyone, anywhere."
@@ -123,7 +123,7 @@ export default function FeatureSection() {
           </FeatureCard>
         </div>
 
-        <div className="col-span-2 row-span-1">
+        <div className=" row-start-3 row-span-1 col-start-1 col-span-6 sm:col-span-3 sm:row-span-1 lg:col-start-2 lg:col-span-4 xl:col-span-2">
           <FeatureCard
             title="Get Started Quickly without Spending Any Money"
             description="Get started with Srot for free. No credit card required. Sign up for free and start creating workflows in minutes."
@@ -136,7 +136,7 @@ export default function FeatureSection() {
               >
                 <span className=" flex items-center gap-2 overflow-hidden text-xl text-white px-6 py-4 bg-gradient-to-r from-brand-purple to-brand-pink rounded-full hover:drop-shadow-[0_35px_35px_rgb(var(--brand-purple))] transition-all duration-100">
                   <MdOutlineCelebration className="w-6 h-6" />
-                  <span className="hidden sm:block ">SignUp for Free</span>
+                  <span className="">SignUp for Free</span>
                 </span>
               </Link>
             </div>
