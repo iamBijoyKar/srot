@@ -17,7 +17,7 @@ export default function NodePreview({
   return (
     <button
       onClick={handleClick}
-      className="w-11 h-15 flex flex-col justify-center items-center rounded py-1 bg-white"
+      className="w-11 h-15 flex flex-col justify-center items-center rounded py-1 bg-white shadow hover:shadow-md transition-all duration-100"
     >
       <span className="">{children}</span>
       <span className="text-xs">{label}</span>
