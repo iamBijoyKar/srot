@@ -47,7 +47,7 @@ export default function NodeColorUpdater({ nodes }: NodeColorUpdaterProps) {
   }, [nodes])
 
   return (
-    <div onClick={handleClick} className="w-8 min-h-14 relative">
+    <div onClick={handleClick} className="w-8 min-h-14 relative cursor-pointer">
       <div className="p-1 rounded bg-ternary-text">
         <div
           className="w-6 h-6 rounded"
@@ -57,7 +57,7 @@ export default function NodeColorUpdater({ nodes }: NodeColorUpdaterProps) {
       <span className="text-xs text-primary-bg leading-3">Color</span>
       {showMenu ? (
         <div className="">
-          <ul className="flex flex-col gap-1">
+          <ul className="flex flex-col gap-2">
             {['#ffffff', '#000000', '#ff0000', '#00ff00', '#0000ff'].map(
               (color) => (
                 <li
@@ -67,7 +67,7 @@ export default function NodeColorUpdater({ nodes }: NodeColorUpdaterProps) {
                   }}
                 >
                   {' '}
-                  <div className="">
+                  <div className="w-full h-full flex justify-center items-center">
                     <button
                       className="w-6 h-6 rounded-full"
                       style={{ backgroundColor: color }}
@@ -77,7 +77,13 @@ export default function NodeColorUpdater({ nodes }: NodeColorUpdaterProps) {
               )
             )}
           </ul>
-          <div className="">
+          <div className="w-full h-full flex justify-center items-center mt-2">
+            <div
+              onClick={() => {
+                inputRef.current?.click()
+              }}
+              className="w-6 h-6 rounded-full bg-gradient-conic from-purple-600 via-blue-600  to-yellow-600"
+            ></div>
             <input
               ref={inputRef}
               type="color"
@@ -85,12 +91,6 @@ export default function NodeColorUpdater({ nodes }: NodeColorUpdaterProps) {
               onChange={(e) => setColor(e.target.value)}
               className="w-0 h-0"
             />
-            <span
-              onClick={() => {
-                inputRef.current?.click()
-              }}
-              className="w-6 h-6 rounded-full bg-gradient-conic from-purple-600 via-blue-600  to-yellow-600"
-            ></span>
           </div>
         </div>
       ) : null}
