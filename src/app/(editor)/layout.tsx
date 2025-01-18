@@ -13,7 +13,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>
+        <body className={`${inter.className} bg-primary-bg `}>
           <Header />
           <main className="w-full h-full">{children}</main>
         </body>
