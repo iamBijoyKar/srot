@@ -1,8 +1,8 @@
 'use client'
 
-import { useCallback, useState, useRef, useEffect, useMemo } from 'react'
-import type { Node, ReactFlowState } from '@xyflow/react'
-import { useStore } from '@xyflow/react'
+import { useCallback, useState, useRef, useEffect, use } from 'react'
+import type { Node } from '@xyflow/react'
+import { useReactFlow } from '@xyflow/react'
 
 type NodeColorUpdaterProps = {
   nodes: Node[]
@@ -11,19 +11,16 @@ type NodeColorUpdaterProps = {
 export default function NodeColorUpdater({ nodes }: NodeColorUpdaterProps) {
   const inputRef = useRef<HTMLInputElement>(null)
   const [showMenu, setShowMenu] = useState(false)
+  const nodeColor = nodes[0].data.nodeColor
   const [color, setColor] = useState<string>(
-    nodes[0].data.nodeColor ? nodes[0].data.nodeColor : '#ffffff'
-  ) // ignore error
+    typeof nodeColor === 'string' ? nodeColor : '#ffffff'
+  )
 
-  const getSetNodes = useCallback((state: ReactFlowState) => {
-    return state.setNodes
-  }, [])
-  const getNodes = useCallback((state: ReactFlowState) => {
-    return state.nodes
-  }, [])
+  const reactFlow = useReactFlow()
+  const nodesState = reactFlow.getNodes()
+  const setNodes = reactFlow.setNodes
 
-  const setNodes = useStore(getSetNodes)
-  const nodesState = useStore(getNodes)
+  //   console.log(color, nodes)
 
   const handleClick = useCallback(() => {
     setShowMenu((prev) => !prev)
@@ -40,6 +37,14 @@ export default function NodeColorUpdater({ nodes }: NodeColorUpdaterProps) {
       })
     )
   }, [color])
+
+  useEffect(() => {
+    if (nodes.length === 0) return
+    const nodeColor = nodes[0].data.nodeColor
+    if (typeof nodeColor === 'string') {
+      setColor(nodeColor)
+    }
+  }, [nodes])
 
   return (
     <div onClick={handleClick} className="w-8 min-h-14 relative">

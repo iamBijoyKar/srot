@@ -27,6 +27,7 @@ export default function Sidebar({ addNewNode }: SidebarProps) {
     ({ nodes, edges }: { nodes: Node[]; edges: Edge[] }) => {
       setSelectedNodes(nodes)
       setSelectedEdges(edges)
+      console.log('nodes', nodes)
     },
     []
   )
@@ -34,18 +35,19 @@ export default function Sidebar({ addNewNode }: SidebarProps) {
   useOnSelectionChange({ onChange })
 
   // This function generates the properties sidebar based on the selected node
-  const propertiesGenerator = useCallback(() => {
-    if (propertiesOf === 'textNode') {
+  const propertiesGenerator = () => {
+    if (propertiesOf === 'textNode' && selectedNodes.length > 0) {
       return <TextNodeProperties nodes={selectedNodes} />
     } else {
       return <div>Image Properties</div>
     }
-  }, [propertiesOf])
+  }
 
   useEffect(() => {
-    if (selectedNodes.length === 1) {
+    if (selectedNodes.length > 0) {
       setSideBarType('properties')
       setPropertiesOf(selectedNodes[0].type as 'textNode' | 'imageNode')
+      // console.log(selectedNodes[0].type)
     } else {
       setSideBarType('nodes')
       setPropertiesOf(null)

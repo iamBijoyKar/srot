@@ -1,5 +1,4 @@
 'use client'
-import { useCallback, useState } from 'react'
 import type { Node } from '@xyflow/react'
 import NodeColorUpdater from './NodeColorUpdater'
 
