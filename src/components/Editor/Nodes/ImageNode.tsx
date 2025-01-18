@@ -1,5 +1,5 @@
 'use client'
-import { useCallback, useState, ChangeEvent } from 'react'
+import { useCallback, useState, ChangeEvent, useRef } from 'react'
 import {
   Handle,
   Position,
@@ -7,16 +7,18 @@ import {
   NodeProps,
   NodeResizeControl
 } from '@xyflow/react'
+import { RiUpload2Fill } from 'react-icons/ri'
 
 type TextNodeProps = Node<{
   image: string
 }>
 
 export default function ImageNode(props: NodeProps<TextNodeProps>) {
+  const inputRef = useRef<HTMLInputElement>(null)
   const [showImg, setShowImg] = useState(false)
   const [imgUrl, setImgUrl] = useState<ArrayBuffer | string>(props.data.image)
   const [width, setWidth] = useState(200)
-  const [height, setHeight] = useState(100)
+  const [height, setHeight] = useState(40)
 
   const handleImageUpload = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
@@ -51,19 +53,29 @@ export default function ImageNode(props: NodeProps<TextNodeProps>) {
       </NodeResizeControl>
 
       <Handle type="target" position={Position.Top} />
-      <div className="bg-white rounded w-full h-full relative border">
+      <div className="bg-white rounded w-full h-full relative border min-w-[200px] min-h-[40px]">
         {showImg ? (
           <img
             src={imgUrl as string}
             className="w-full h-full max-w-[600px] max-h-[600px] object-cover"
           />
         ) : (
-          <input
-            onChange={handleImageUpload}
-            type="file"
-            accept="image/*"
-            className="w-full"
-          />
+          <div className="p-2 w-full h-16">
+            <button
+              onClick={() => inputRef.current?.click()}
+              className="w-full rounded-full flex items-center gap-2 p-2 bg-secondary-text cursor-pointer"
+            >
+              <RiUpload2Fill className="w-8 h-8 text-gray-400" />
+              <span className="text-xs">Upload Image</span>
+            </button>
+            <input
+              ref={inputRef}
+              onChange={handleImageUpload}
+              type="file"
+              accept="image/*"
+              className="w-0 h-0 opacity-0"
+            />
+          </div>
         )}
       </div>
       <Handle type="source" position={Position.Bottom} id="a" />
