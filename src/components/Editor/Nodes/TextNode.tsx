@@ -10,6 +10,7 @@ import {
 
 type TextNodeProps = Node<{
   text: string
+  nodeColor?: string
 }>
 
 export default function TextUpdaterNode(props: NodeProps<TextNodeProps>) {
@@ -54,9 +55,12 @@ export default function TextUpdaterNode(props: NodeProps<TextNodeProps>) {
       <div
         ref={nodeRef}
         onClick={handleNodeClick}
-        className={`border p-2 bg-white rounded w-full h-full relative ${
+        className={`border p-2 rounded w-full h-full relative ${
           props.selected ? 'border-blue-500' : 'border-gray-300'
         }`}
+        style={{
+          backgroundColor: props.data.nodeColor ? props.data.nodeColor : 'white'
+        }}
       >
         {showInput ? (
           <textarea

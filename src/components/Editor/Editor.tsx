@@ -22,7 +22,7 @@ const initialNodes = [
   {
     id: '4',
     position: { x: 0, y: 300 },
-    data: { text: 'hello' },
+    data: { text: 'hello', nodeColor: '#fff' },
     type: 'textNode'
   },
   {

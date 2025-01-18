@@ -1,30 +1,83 @@
+'use client'
+import { useCallback, useEffect, useState } from 'react'
+import { useOnSelectionChange } from '@xyflow/react'
+import type { Node, Edge } from '@xyflow/react'
 import { BsTextParagraph } from 'react-icons/bs'
 import { GoImage } from 'react-icons/go'
 import NodePreview from './NodePreview'
+import TextNodeProperties from '../Nodes/TextNodeProperties/TextNodeProperties'
 
 type SidebarProps = {
   addNewNode: ({ type }: { type: string }) => void
 }
 
 export default function Sidebar({ addNewNode }: SidebarProps) {
+  // This state is used to determine which sidebar to show
+  const [sideBarType, setSideBarType] = useState<'nodes' | 'properties'>(
+    'nodes'
+  )
+  const [propertiesOf, setPropertiesOf] = useState<
+    'textNode' | 'imageNode' | null
+  >(null)
+  const [selectedNodes, setSelectedNodes] = useState<Node[]>([])
+  const [selectedEdges, setSelectedEdges] = useState<Edge[]>([])
+
+  // This function is called when the selection changes
+  const onChange = useCallback(
+    ({ nodes, edges }: { nodes: Node[]; edges: Edge[] }) => {
+      setSelectedNodes(nodes)
+      setSelectedEdges(edges)
+    },
+    []
+  )
+  // This hook listens for selection changes
+  useOnSelectionChange({ onChange })
+
+  // This function generates the properties sidebar based on the selected node
+  const propertiesGenerator = useCallback(() => {
+    if (propertiesOf === 'textNode') {
+      return <TextNodeProperties nodes={selectedNodes} />
+    } else {
+      return <div>Image Properties</div>
+    }
+  }, [propertiesOf])
+
+  useEffect(() => {
+    if (selectedNodes.length === 1) {
+      setSideBarType('properties')
+      setPropertiesOf(selectedNodes[0].type as 'textNode' | 'imageNode')
+    } else {
+      setSideBarType('nodes')
+      setPropertiesOf(null)
+    }
+  }, [selectedNodes])
+
   return (
     <aside className="w-16 h-full bg-secondary-text flex flex-col items-center ">
-      <ul className="w-full h-full flex flex-col items-center gap-3 my-4">
-        <li className="">
-          <NodePreview label="Text" addNewNode={addNewNode} nodeType="textNode">
-            <BsTextParagraph className="w-8 h-8 text-secondary-bg" />
-          </NodePreview>
-        </li>
-        <li className="">
-          <NodePreview
-            label="Image"
-            addNewNode={addNewNode}
-            nodeType="imageNode"
-          >
-            <GoImage className="w-8 h-8 text-secondary-bg" />
-          </NodePreview>
-        </li>
-      </ul>
+      {sideBarType === 'nodes' ? (
+        <ul className="w-full h-full flex flex-col items-center gap-3 my-4 motion-preset-fade-sm motion-duration-1000">
+          <li className="">
+            <NodePreview
+              label="Text"
+              addNewNode={addNewNode}
+              nodeType="textNode"
+            >
+              <BsTextParagraph className="w-8 h-8 text-secondary-bg" />
+            </NodePreview>
+          </li>
+          <li className="">
+            <NodePreview
+              label="Image"
+              addNewNode={addNewNode}
+              nodeType="imageNode"
+            >
+              <GoImage className="w-8 h-8 text-secondary-bg" />
+            </NodePreview>
+          </li>
+        </ul>
+      ) : (
+        <div className="">{propertiesGenerator()}</div>
+      )}
     </aside>
   )
 }
