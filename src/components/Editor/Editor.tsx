@@ -54,7 +54,7 @@ export default function Editor() {
     <ReactFlowProvider>
       <div
         style={{ width: '100%', height: 'calc(100vh - 40px)' }}
-        className="flex"
+        className="flex bg-white"
       >
         <Sidebar addNewNode={addNewNode} />
         <ReactFlow
