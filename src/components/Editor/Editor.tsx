@@ -24,6 +24,12 @@ const initialNodes = [
     position: { x: 0, y: 300 },
     data: { text: 'hello' },
     type: 'textNode'
+  },
+  {
+    id: '5',
+    position: { x: 300, y: 300 },
+    data: { image: 'world', text: '' },
+    type: 'imageNode'
   }
 ]
 const initialEdges = [{ id: 'e1-2', source: '1', target: '2' }]
@@ -42,7 +48,7 @@ export default function Editor() {
       const newNode = {
         id: (nodes.length + 1).toString(),
         position: { x: 10, y: 10 },
-        data: { value: (nodes.length + 1).toString(), text: '' },
+        data: { value: (nodes.length + 1).toString(), text: '', image: '' },
         type: type
       }
       setNodes((prev) => prev.concat(newNode))

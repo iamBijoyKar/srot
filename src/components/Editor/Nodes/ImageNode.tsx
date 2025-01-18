@@ -9,12 +9,12 @@ import {
 } from '@xyflow/react'
 
 type TextNodeProps = Node<{
-  text: string
+  image: string
 }>
 
 export default function ImageNode(props: NodeProps<TextNodeProps>) {
   const [showImg, setShowImg] = useState(false)
-  const [imgUrl, setImgUrl] = useState<ArrayBuffer | string>()
+  const [imgUrl, setImgUrl] = useState<ArrayBuffer | string>(props.data.image)
   const [width, setWidth] = useState(200)
   const [height, setHeight] = useState(100)
 
@@ -55,7 +55,7 @@ export default function ImageNode(props: NodeProps<TextNodeProps>) {
         {showImg ? (
           <img
             src={imgUrl as string}
-            className="w-full h-full max-w-[600px] object-cover"
+            className="w-full h-full max-w-[600px] max-h-[600px] object-cover"
           />
         ) : (
           <input
