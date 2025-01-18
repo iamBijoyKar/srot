@@ -4,6 +4,7 @@ import { Barlow, Knewave } from 'next/font/google'
 import Header from '@/components/Home/Header'
 import HeroFlowNodes from '@/components/Home/HeroFlowNodes'
 import FeatureSection from '@/components/Home/Feature/FeatureSection'
+import ProductSS from '@/components/Home/ProductSS'
 
 const barlow = Barlow({ weight: '800', subsets: ['latin'] })
 const knewave = Knewave({ weight: '400', subsets: ['latin'] })
@@ -43,6 +44,7 @@ export default function HomePage() {
         </div>
       </section>
       <FeatureSection />
+      <ProductSS />
     </div>
   )
 }
