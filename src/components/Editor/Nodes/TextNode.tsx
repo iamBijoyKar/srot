@@ -69,7 +69,7 @@ export default function TextUpdaterNode(props: NodeProps<TextNodeProps>) {
             name="text"
             onChange={onChange}
             value={text}
-            className="nodrag outline-none w-full h-full resize-none"
+            className="nodrag outline-none w-full h-full bg-transparent resize-none"
             spellCheck="false"
             data-ms-editor="true"
           ></textarea>
