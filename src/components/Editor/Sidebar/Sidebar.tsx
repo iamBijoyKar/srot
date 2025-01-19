@@ -4,6 +4,7 @@ import { useOnSelectionChange } from '@xyflow/react'
 import type { Node, Edge } from '@xyflow/react'
 import { BsTextParagraph } from 'react-icons/bs'
 import { GoImage } from 'react-icons/go'
+import { PiImageSquare } from 'react-icons/pi'
 import NodePreview from './NodePreview'
 import TextNodeProperties from '../Nodes/TextNodeProperties/TextNodeProperties'
 
@@ -57,14 +58,14 @@ export default function Sidebar({ addNewNode }: SidebarProps) {
   return (
     <aside className="w-16 h-full bg-secondary-text flex flex-col items-center ">
       {sideBarType === 'nodes' ? (
-        <ul className="w-full h-full flex flex-col items-center gap-3 my-4 motion-preset-fade-sm motion-duration-1000">
+        <ul className="w-full h-full flex flex-col items-center gap-2 my-4 motion-preset-fade-sm motion-duration-1000">
           <li className="">
             <NodePreview
               label="Text"
               addNewNode={addNewNode}
               nodeType="textNode"
             >
-              <BsTextParagraph className="w-8 h-8 text-secondary-bg" />
+              <BsTextParagraph className="w-6 h-6 text-secondary-bg" />
             </NodePreview>
           </li>
           <li className="">
@@ -73,7 +74,7 @@ export default function Sidebar({ addNewNode }: SidebarProps) {
               addNewNode={addNewNode}
               nodeType="imageNode"
             >
-              <GoImage className="w-8 h-8 text-secondary-bg" />
+              <PiImageSquare className="w-6 h-6 text-secondary-bg" />
             </NodePreview>
           </li>
         </ul>

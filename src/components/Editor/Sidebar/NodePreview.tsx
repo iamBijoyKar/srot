@@ -17,10 +17,12 @@ export default function NodePreview({
   return (
     <button
       onClick={handleClick}
-      className="w-11 h-15 flex flex-col justify-center items-center rounded py-1 bg-white shadow hover:shadow-md transition-all duration-100"
+      className="w-11 h-[50px] flex flex-col justify-center items-center rounded hover:translate-x-1 transition-all duration-100 "
     >
-      <span className="">{children}</span>
-      <span className="text-xs">{label}</span>
+      <span className="bg-white p-[3px] rounded shadow hover:shadow-md transition-all duration-100">
+        {children}
+      </span>
+      <span className="text-[10px] mt-1">{label}</span>
     </button>
   )
 }
