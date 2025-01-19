@@ -11,6 +11,9 @@ import {
 type TextNodeProps = Node<{
   text: string
   nodeColor?: string
+  textColor?: string
+  fontSize?: number
+  fontWeight?: string
 }>
 
 export default function TextUpdaterNode(props: NodeProps<TextNodeProps>) {
@@ -20,6 +23,10 @@ export default function TextUpdaterNode(props: NodeProps<TextNodeProps>) {
   const [showInput, setShowInput] = useState(false)
   const [width, setWidth] = useState(200)
   const [height, setHeight] = useState(100)
+
+  const textColor = props.data.textColor ? props.data.textColor : '#000'
+  const fontSize = props.data.fontSize ? props.data.fontSize : 16
+  const fontWeight = props.data.fontWeight ? props.data.fontWeight : 'normal'
 
   const onChange = useCallback((event: any) => {
     setText(event.target.value)
@@ -72,11 +79,24 @@ export default function TextUpdaterNode(props: NodeProps<TextNodeProps>) {
             className="nodrag outline-none w-full h-full bg-transparent resize-none"
             spellCheck="false"
             data-ms-editor="true"
+            style={{
+              width: width - 12,
+              height: height - 12,
+              color: textColor,
+              fontSize,
+              fontWeight
+            }}
           ></textarea>
         ) : (
           <p
             className=" whitespace-normal break-words"
-            style={{ width: width - 16, height: height - 16 }}
+            style={{
+              width: width - 16,
+              height: height - 16,
+              color: textColor,
+              fontSize,
+              fontWeight
+            }}
           >
             {text}
           </p>

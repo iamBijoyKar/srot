@@ -15,20 +15,27 @@ import {
 } from '@xyflow/react'
 import { nodeTypes } from './NodeTypes'
 import Sidebar from './Sidebar/Sidebar'
+import type { TextNode, ImageNode } from '@/types'
 
 import '@xyflow/react/dist/style.css'
 
-const initialNodes = [
+const initialNodes: (TextNode | ImageNode)[] = [
   {
-    id: '4',
+    id: '1',
     position: { x: 0, y: 300 },
-    data: { text: 'hello', nodeColor: '#fff' },
+    data: {
+      text: 'hello',
+      nodeColor: '#fff',
+      textColor: '#000',
+      fontSize: 16,
+      fontWeight: 'normal'
+    },
     type: 'textNode'
   },
   {
-    id: '5',
+    id: '2',
     position: { x: 300, y: 300 },
-    data: { image: 'world', text: '' },
+    data: { image: 'world' },
     type: 'imageNode'
   }
 ]
@@ -48,7 +55,16 @@ export default function Editor() {
       const newNode = {
         id: (nodes.length + 1).toString(),
         position: { x: 10, y: 10 },
-        data: { value: (nodes.length + 1).toString(), text: '', image: '' },
+        data:
+          type === 'textNode'
+            ? {
+                text: '',
+                nodeColor: '#fff',
+                textColor: '#000',
+                fontSize: 16,
+                fontWeight: 'normal'
+              }
+            : { image: '' },
         type: type
       }
       setNodes((prev) => prev.concat(newNode))

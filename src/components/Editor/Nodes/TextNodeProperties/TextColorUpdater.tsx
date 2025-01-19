@@ -1,19 +1,19 @@
 'use client'
 
-import { useCallback, useState, useRef, useEffect, use } from 'react'
+import { useCallback, useState, useRef, useEffect } from 'react'
 import type { Node } from '@xyflow/react'
 import { useReactFlow } from '@xyflow/react'
 
-type NodeColorUpdaterProps = {
+type TextColorUpdaterProps = {
   nodes: Node[]
 }
 
-export default function NodeColorUpdater({ nodes }: NodeColorUpdaterProps) {
+export default function TextColorUpdater({ nodes }: TextColorUpdaterProps) {
   const inputRef = useRef<HTMLInputElement>(null)
   const [showMenu, setShowMenu] = useState(false)
-  const nodeColor = nodes[0].data.nodeColor
+  const textColor = nodes[0].data.textColor
   const [color, setColor] = useState<string>(
-    typeof nodeColor === 'string' ? nodeColor : '#ffffff'
+    typeof textColor === 'string' ? textColor : '#ffffff'
   )
 
   const reactFlow = useReactFlow()
@@ -31,7 +31,7 @@ export default function NodeColorUpdater({ nodes }: NodeColorUpdaterProps) {
     setNodes(
       nodesState.filter((node) => {
         if (node.id === nodes[0].id) {
-          node.data.nodeColor = color
+          node.data.textColor = color
         }
         return node
       })
@@ -40,22 +40,25 @@ export default function NodeColorUpdater({ nodes }: NodeColorUpdaterProps) {
 
   useEffect(() => {
     if (nodes.length === 0) return
-    const nodeColor = nodes[0].data.nodeColor
-    if (typeof nodeColor === 'string') {
-      setColor(nodeColor)
+    const textColor = nodes[0].data.textColor
+    if (typeof textColor === 'string') {
+      setColor(textColor)
     }
   }, [nodes])
 
   return (
-    <div onClick={handleClick} className="w-8 min-h-14 relative cursor-pointer">
+    <div
+      onClick={handleClick}
+      className="w-8 min-h-14 relative cursor-pointer "
+    >
       <div className="flex flex-col items-center gap-2">
-        <div className="p-1 rounded bg-ternary-text flex flex-col items-center">
+        <div className="p-1 rounded bg-ternary-text">
           <div
             className="w-6 h-6 rounded"
             style={{ backgroundColor: color }}
           ></div>
         </div>
-        <span className="text-xs text-primary-bg leading-3">Card</span>
+        <span className="text-xs text-primary-bg leading-3">Text</span>
       </div>
       {showMenu ? (
         <div className="">
