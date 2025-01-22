@@ -26,3 +26,12 @@ export type TodoNode = {
   }
   type: 'todoNode'
 }
+
+export type LinkNode = {
+  id: string
+  position: { x: number; y: number }
+  data: {
+    link: string
+  }
+  type: 'linkNode'
+}

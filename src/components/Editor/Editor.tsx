@@ -14,11 +14,11 @@ import {
 } from '@xyflow/react'
 import { nodeTypes } from './NodeTypes'
 import Sidebar from './Sidebar/Sidebar'
-import type { TextNode, ImageNode, TodoNode } from '@/types'
+import type { TextNode, ImageNode, TodoNode, LinkNode } from '@/types'
 
 import '@xyflow/react/dist/style.css'
 
-const initialNodes: (TextNode | ImageNode | TodoNode)[] = [
+const initialNodes: (TextNode | ImageNode | TodoNode | LinkNode)[] = [
   {
     id: '1',
     position: { x: 0, y: 300 },
@@ -42,6 +42,12 @@ const initialNodes: (TextNode | ImageNode | TodoNode)[] = [
     position: { x: 200, y: 200 },
     data: { todos: [] },
     type: 'todoNode'
+  },
+  {
+    id: '4',
+    position: { x: 200, y: 200 },
+    data: { link: '' },
+    type: 'linkNode'
   }
 ]
 const initialEdges = [{ id: 'e1-2', source: '1', target: '2' }]
