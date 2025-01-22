@@ -56,21 +56,30 @@ export default function Editor() {
     [setEdges]
   )
 
+  const nodeDataProvider = (type: string) => {
+    if (type === 'textNode') {
+      return {
+        text: '',
+        nodeColor: '#fff',
+        textColor: '#000',
+        fontSize: 16,
+        fontWeight: 'normal'
+      }
+    } else if (type === 'imageNode') {
+      return { image: '' }
+    } else if (type === 'todoNode') {
+      return { todos: [] }
+    } else {
+      return {}
+    }
+  }
+
   const addNewNode = useCallback(
     ({ type }: { type: string }) => {
       const newNode = {
         id: (nodes.length + 1).toString(),
         position: { x: 10, y: 10 },
-        data:
-          type === 'textNode'
-            ? {
-                text: '',
-                nodeColor: '#fff',
-                textColor: '#000',
-                fontSize: 16,
-                fontWeight: 'normal'
-              }
-            : { image: '' },
+        data: nodeDataProvider(type),
         type: type
       }
       setNodes((prev) => prev.concat(newNode))
