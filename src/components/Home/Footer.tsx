@@ -116,6 +116,11 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
+      <div className="container mx-auto p-4 my-10">
+        <p className="text-primary-text text-center">
+          © 2021 Srot. All rights reserved
+        </p>
+      </div>
     </>
   )
 }
