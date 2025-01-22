@@ -88,7 +88,11 @@ export default function TodoNode(props: NodeProps<TodoNodeProps>) {
       </NodeResizeControl>
 
       <Handle type="target" position={Position.Top} />
-      <div className="border p-2 rounded min-w-[240px] min-h-fit w-full relative bg-white">
+      <div
+        className={`border p-2 rounded min-w-[240px] min-h-fit w-full relative bg-white ${
+          props.selected ? 'border-blue-500' : 'border-gray-300'
+        }`}
+      >
         <div className="flex flex-col gap-3 w-full">
           {todos.map((todo) => (
             <div key={todo.id} className="flex items-center gap-2">

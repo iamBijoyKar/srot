@@ -53,7 +53,11 @@ export default function ImageNode(props: NodeProps<TextNodeProps>) {
       </NodeResizeControl>
 
       <Handle type="target" position={Position.Top} />
-      <div className="bg-white rounded w-full h-full relative border min-w-[200px] min-h-[40px]">
+      <div
+        className={`bg-white rounded w-full h-full relative border min-w-[200px] min-h-[40px] ${
+          props.selected ? 'border-blue-500' : 'border-gray-300'
+        }`}
+      >
         {showImg ? (
           <img
             src={imgUrl as string}
