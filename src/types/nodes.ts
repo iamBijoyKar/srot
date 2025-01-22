@@ -17,3 +17,12 @@ export type ImageNode = {
   data: { image: string }
   type: 'imageNode'
 }
+
+export type TodoNode = {
+  id: string
+  position: { x: number; y: number }
+  data: {
+    todos: { id: string; text: string; completed: boolean }[]
+  }
+  type: 'todoNode'
+}
