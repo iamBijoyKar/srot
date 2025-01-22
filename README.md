@@ -12,8 +12,11 @@ https://app.milanote.com/1Tqkr91OF8wP1c?p=kGs1JaETxwG
 - [ ] Markdown Support
 - [ ] Home Page Update
 - [ ] Video Node
-- [ ] Url Node
+- [x] Url Node
+- [ ] Url Node Preview add in Link Node
 - [ ] Code Node
 - [ ] Table Node
 - [ ] Audio Node
 - [ ] Add Node Resize Orb gradient animation
+- [ ] Add Powered By React Flow, NextJs in Home Page
+- [ ] In ss section(Home Page) change ss with btn action like minimize, maximize, close
