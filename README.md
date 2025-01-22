@@ -4,7 +4,8 @@ https://app.milanote.com/1Tqkr91OF8wP1c?p=kGs1JaETxwG
 
 ## Todos
 
-- [ ] Todo Node
+- [x] Todo Node
+- [x] Node Border on Selection
 - [ ] Image Properties Edit
 - [ ] Dashboard Page
 - [ ] Signin Signup Page
@@ -15,3 +16,4 @@ https://app.milanote.com/1Tqkr91OF8wP1c?p=kGs1JaETxwG
 - [ ] Code Node
 - [ ] Table Node
 - [ ] Audio Node
+- [ ] Add Node Resize Orb gradient animation
