@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { useOnSelectionChange } from '@xyflow/react'
 import type { Node, Edge } from '@xyflow/react'
 import { BsTextParagraph } from 'react-icons/bs'
+import { LuListTodo } from 'react-icons/lu'
 import { GoImage } from 'react-icons/go'
 import { PiImageSquare } from 'react-icons/pi'
 import NodePreview from './NodePreview'
@@ -40,7 +41,7 @@ export default function Sidebar({ addNewNode }: SidebarProps) {
     if (propertiesOf === 'textNode' && selectedNodes.length > 0) {
       return <TextNodeProperties nodes={selectedNodes} />
     } else {
-      return <div>Image Properties</div>
+      return <div className="motion-preset-fade">Props</div>
     }
   }
 
@@ -75,6 +76,15 @@ export default function Sidebar({ addNewNode }: SidebarProps) {
               nodeType="imageNode"
             >
               <PiImageSquare className="w-6 h-6 text-secondary-bg" />
+            </NodePreview>
+          </li>
+          <li className="">
+            <NodePreview
+              label="To-do"
+              addNewNode={addNewNode}
+              nodeType="todoNode"
+            >
+              <LuListTodo className="w-6 h-6 text-secondary-bg" />
             </NodePreview>
           </li>
         </ul>
