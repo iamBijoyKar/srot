@@ -5,6 +5,7 @@ import type { Node, Edge } from '@xyflow/react'
 import { BsTextParagraph } from 'react-icons/bs'
 import { LuListTodo } from 'react-icons/lu'
 import { PiImageSquare } from 'react-icons/pi'
+import { HiMiniLink } from 'react-icons/hi2'
 import NodePreview from './NodePreview'
 import TextNodeProperties from '../Nodes/TextNodeProperties/TextNodeProperties'
 
@@ -84,6 +85,15 @@ export default function Sidebar({ addNewNode }: SidebarProps) {
               nodeType="todoNode"
             >
               <LuListTodo className="w-6 h-6 text-secondary-bg" />
+            </NodePreview>
+          </li>
+          <li className="">
+            <NodePreview
+              label="Link"
+              addNewNode={addNewNode}
+              nodeType="linkNode"
+            >
+              <HiMiniLink className="w-6 h-6 text-secondary-bg" />
             </NodePreview>
           </li>
         </ul>

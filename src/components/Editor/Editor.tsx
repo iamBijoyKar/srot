@@ -74,6 +74,8 @@ export default function Editor() {
       return { image: '' }
     } else if (type === 'todoNode') {
       return { todos: [] }
+    } else if (type === 'linkNode') {
+      return { link: '' }
     } else {
       return {}
     }
