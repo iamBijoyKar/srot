@@ -10,8 +10,7 @@ import {
   BackgroundVariant,
   useNodesState,
   useEdgesState,
-  addEdge,
-  useOnSelectionChange
+  addEdge
 } from '@xyflow/react'
 import { nodeTypes } from './NodeTypes'
 import Sidebar from './Sidebar/Sidebar'
