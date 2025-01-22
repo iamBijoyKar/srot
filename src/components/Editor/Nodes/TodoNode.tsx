@@ -83,13 +83,13 @@ export default function TodoNode(props: NodeProps<TodoNodeProps>) {
         className="relative"
       >
         {props.selected ? (
-          <div className="absolute -top-0 -left-0 w-2 h-2 rounded-full bg-gradient-to-r from-purple-600 to-blue-600"></div>
+          <div className="absolute -top-0 -left-0 w-2 h-2 rounded-full gradient-orb"></div>
         ) : null}
       </NodeResizeControl>
 
       <Handle type="target" position={Position.Top} />
       <div
-        className={`border p-2 rounded min-w-[240px] min-h-fit w-full relative bg-white ${
+        className={`border p-2 rounded min-w-[240px] min-h-full w-full relative bg-white ${
           props.selected ? 'border-blue-500' : 'border-gray-300'
         }`}
       >
