@@ -7,7 +7,7 @@ import { LuListTodo } from 'react-icons/lu'
 import { PiImageSquare } from 'react-icons/pi'
 import { HiMiniLink } from 'react-icons/hi2'
 import NodePreview from './NodePreview'
-import TextNodeProperties from '../Nodes/TextNodeProperties/TextNodeProperties'
+import TextNodeProperties from './NodeProperties/TextNodeProperties/TextNodeProperties'
 
 type SidebarProps = {
   addNewNode: ({ type }: { type: string }) => void
