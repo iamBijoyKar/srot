@@ -1,12 +1,14 @@
 'use client'
 import Link from 'next/link'
-import { useCallback, useState, useRef, useEffect } from 'react'
+import { useCallback, useState, useRef, useEffect, ChangeEvent } from 'react'
 import {
   Handle,
   Position,
   Node,
   NodeProps,
-  NodeResizeControl
+  NodeResizeControl,
+  useReactFlow,
+  useNodeId
 } from '@xyflow/react'
 
 type LinkNodeProps = Node<{
@@ -15,8 +17,9 @@ type LinkNodeProps = Node<{
 
 export default function LinkNode(props: NodeProps<LinkNodeProps>) {
   const nodeRef = useRef<HTMLDivElement>(null)
+  const reactFlow = useReactFlow()
+  const nodeId = useNodeId()
 
-  const [link, setLink] = useState(props.data.link)
   const [showInput, setShowInput] = useState(false)
 
   const [width, setWidth] = useState(240)
@@ -26,6 +29,17 @@ export default function LinkNode(props: NodeProps<LinkNodeProps>) {
     if (!props.selected) return
     setShowInput(true)
   }, [props])
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    reactFlow.setNodes(
+      reactFlow.getNodes().filter((node) => {
+        if (node.id === nodeId) {
+          node.data.link = e.target.value
+        }
+        return node
+      })
+    )
+  }
 
   useEffect(() => {
     if (props.selected === false) {
@@ -57,8 +71,8 @@ export default function LinkNode(props: NodeProps<LinkNodeProps>) {
         <div className=" min-h-[30px] h-full w-full text-blue-500 underline overflow-hidden truncate">
           {showInput ? (
             <input
-              onChange={(e) => setLink(e.target.value)}
-              value={link}
+              onChange={handleChange}
+              value={props.data.link}
               type="text"
               name=""
               id=""
@@ -66,11 +80,11 @@ export default function LinkNode(props: NodeProps<LinkNodeProps>) {
             />
           ) : (
             <Link
-              href={link}
+              href={props.data.link}
               className="text-blue-500 underline overflow-hidden truncate"
               target="_blank"
             >
-              {link}
+              {props.data.link}
             </Link>
           )}
         </div>

@@ -1,11 +1,13 @@
 'use client'
-import { useCallback, useState, ChangeEvent, useRef } from 'react'
+import { useCallback, useEffect, useState, ChangeEvent, useRef } from 'react'
 import {
   Handle,
   Position,
   Node,
   NodeProps,
-  NodeResizeControl
+  NodeResizeControl,
+  useReactFlow,
+  useNodeId
 } from '@xyflow/react'
 import { RiUpload2Fill } from 'react-icons/ri'
 
@@ -16,9 +18,11 @@ type TextNodeProps = Node<{
 export default function ImageNode(props: NodeProps<TextNodeProps>) {
   const inputRef = useRef<HTMLInputElement>(null)
   const [showImg, setShowImg] = useState(false)
-  const [imgUrl, setImgUrl] = useState<ArrayBuffer | string>(props.data.image)
+  // const [imgUrl, setImgUrl] = useState<ArrayBuffer | string>(props.data.image)
   const [width, setWidth] = useState(200)
   const [height, setHeight] = useState(40)
+  const reactFlow = useReactFlow()
+  const nodeId = useNodeId()
 
   const handleImageUpload = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
@@ -27,7 +31,14 @@ export default function ImageNode(props: NodeProps<TextNodeProps>) {
       const reader = new FileReader()
       reader.onload = () => {
         if (reader.result !== null) {
-          setImgUrl(reader.result)
+          reactFlow.setNodes(
+            reactFlow.getNodes().filter((node) => {
+              if (node.id === nodeId) {
+                node.data.image = reader.result
+              }
+              return node
+            })
+          )
           console.log(reader.result)
         }
       }
@@ -60,7 +71,7 @@ export default function ImageNode(props: NodeProps<TextNodeProps>) {
       >
         {showImg ? (
           <img
-            src={imgUrl as string}
+            src={props.data.image}
             className="w-full h-full max-w-[600px] max-h-[600px] object-cover"
           />
         ) : (

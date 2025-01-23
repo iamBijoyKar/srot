@@ -5,7 +5,9 @@ import {
   Position,
   Node,
   NodeProps,
-  NodeResizeControl
+  NodeResizeControl,
+  useReactFlow,
+  useNodeId
 } from '@xyflow/react'
 
 type TextNodeProps = Node<{
@@ -27,6 +29,8 @@ export default function TextUpdaterNode(props: NodeProps<TextNodeProps>) {
   const textColor = props.data.textColor ? props.data.textColor : '#000'
   const fontSize = props.data.fontSize ? props.data.fontSize : 16
   const fontWeight = props.data.fontWeight ? props.data.fontWeight : 'normal'
+  const reactFlow = useReactFlow()
+  const nodeId = useNodeId()
 
   const onChange = useCallback((event: any) => {
     setText(event.target.value)
@@ -44,6 +48,17 @@ export default function TextUpdaterNode(props: NodeProps<TextNodeProps>) {
       setShowInput(false)
     }
   }, [props.selected])
+
+  useEffect(() => {
+    reactFlow.setNodes(
+      reactFlow.getNodes().filter((node) => {
+        if (node.id === nodeId) {
+          node.data.text = text
+        }
+        return node
+      })
+    )
+  }, [text])
 
   return (
     <>
