@@ -8,6 +8,7 @@ import { PiImageSquare } from 'react-icons/pi'
 import { HiMiniLink } from 'react-icons/hi2'
 import NodePreview from './NodePreview'
 import TextNodeProperties from './NodeProperties/TextNodeProperties/TextNodeProperties'
+import ImageNodeProperties from './NodeProperties/ImageNodeProperties/ImageNodeProperties'
 
 type SidebarProps = {
   addNewNode: ({ type }: { type: string }) => void
@@ -48,7 +49,7 @@ export default function Sidebar({ addNewNode }: SidebarProps) {
     if (propertiesOf === 'textNode' && selectedNodes.length > 0) {
       return <TextNodeProperties nodes={selectedNodes} />
     } else if (propertiesOf === 'imageNode' && selectedNodes.length > 0) {
-      return <div className="motion-preset-fade">Img</div>
+      return <ImageNodeProperties nodes={selectedNodes} />
     } else if (propertiesOf === 'todoNode' && selectedNodes.length > 0) {
       return <div className="motion-preset-fade">Todo</div>
     } else if (propertiesOf === 'linkNode' && selectedNodes.length > 0) {
