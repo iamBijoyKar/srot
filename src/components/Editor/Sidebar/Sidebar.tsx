@@ -13,14 +13,20 @@ type SidebarProps = {
   addNewNode: ({ type }: { type: string }) => void
 }
 
+type PropertiesOf =
+  | 'textNode'
+  | 'imageNode'
+  | 'todoNode'
+  | 'linkNode'
+  | 'edge'
+  | null
+
 export default function Sidebar({ addNewNode }: SidebarProps) {
   // This state is used to determine which sidebar to show
   const [sideBarType, setSideBarType] = useState<'nodes' | 'properties'>(
     'nodes'
   )
-  const [propertiesOf, setPropertiesOf] = useState<
-    'textNode' | 'imageNode' | null
-  >(null)
+  const [propertiesOf, setPropertiesOf] = useState<PropertiesOf>(null)
   const [selectedNodes, setSelectedNodes] = useState<Node[]>([])
   const [selectedEdges, setSelectedEdges] = useState<Edge[]>([])
 
@@ -38,23 +44,38 @@ export default function Sidebar({ addNewNode }: SidebarProps) {
 
   // This function generates the properties sidebar based on the selected node
   const propertiesGenerator = () => {
+    // console.log(propertiesOf)
     if (propertiesOf === 'textNode' && selectedNodes.length > 0) {
       return <TextNodeProperties nodes={selectedNodes} />
+    } else if (propertiesOf === 'imageNode' && selectedNodes.length > 0) {
+      return <div className="motion-preset-fade">Img</div>
+    } else if (propertiesOf === 'todoNode' && selectedNodes.length > 0) {
+      return <div className="motion-preset-fade">Todo</div>
+    } else if (propertiesOf === 'linkNode' && selectedNodes.length > 0) {
+      return <div className="motion-preset-fade">Link</div>
+    } else if (propertiesOf === 'edge' && selectedEdges.length > 0) {
+      return <div className="motion-preset-fade">Edge</div>
     } else {
-      return <div className="motion-preset-fade">Props</div>
+      return <div className="motion-preset-fade">None</div>
     }
   }
 
   useEffect(() => {
+    if (selectedEdges.length > 0 && selectedNodes.length > 0) return
     if (selectedNodes.length > 0) {
       setSideBarType('properties')
-      setPropertiesOf(selectedNodes[0].type as 'textNode' | 'imageNode')
+      setPropertiesOf(selectedNodes[0].type as PropertiesOf)
       // console.log(selectedNodes[0].type)
+    } else if (selectedEdges.length > 0) {
+      setSideBarType('properties')
+      setPropertiesOf(
+        selectedEdges[0].type ? (selectedEdges[0].type as PropertiesOf) : 'edge'
+      )
     } else {
       setSideBarType('nodes')
       setPropertiesOf(null)
     }
-  }, [selectedNodes])
+  }, [selectedNodes, selectedEdges])
 
   return (
     <aside className="w-16 h-full bg-secondary-text flex flex-col items-center ">
