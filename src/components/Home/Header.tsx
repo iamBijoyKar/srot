@@ -1,22 +1,16 @@
 import Link from 'next/link'
-import { Knewave } from 'next/font/google'
+import Image from 'next/image'
 import { MdOutlineCelebration } from 'react-icons/md'
-import { FcWorkflow } from 'react-icons/fc'
 import { FaGithub } from 'react-icons/fa'
 
-const knewave = Knewave({ weight: '400', subsets: ['latin'] })
+import srotImg from '@/assets/srot-d-text.png'
 
 export default function Header() {
   return (
     <header className="h-16 px-8 py-2 w-full flex items-center justify-between bg-primary-bg  ">
       <Link href="/">
         <div className="flex items-center gap-2">
-          <FcWorkflow className="w-8 h-8 text-primary-text" />
-          <span
-            className={`text-2xl font-bold text-primary-text ${knewave.className}`}
-          >
-            Srot
-          </span>
+          <Image src={srotImg} alt="Srot" width={120} height={80} />
         </div>
       </Link>
       <div className="">
