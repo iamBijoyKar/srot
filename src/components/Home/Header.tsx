@@ -7,7 +7,7 @@ import srotImg from '@/assets/srot-d-text.png'
 
 export default function Header() {
   return (
-    <header className="h-16 px-8 py-2 w-full flex items-center justify-between bg-primary-bg  ">
+    <header className="h-16 px-4 sm:px-6 md:px-8 py-2 w-full flex items-center justify-between bg-primary-bg  ">
       <Link href="/">
         <div className="flex items-center gap-2">
           <Image src={srotImg} alt="Srot" width={120} height={80} />
