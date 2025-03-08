@@ -1,5 +1,8 @@
 <div align="center">
-
+    
+<img src="https://github.com/user-attachments/assets/86b500d8-df9b-48d8-a2ca-d75e5b21619d" alt="logo" width="250px" />
+<br/>
+<br/>
 <p>
     Srot is a flow editor that allows you to create flow diagrams with ease. It is built using React Flow, NextJs, and Tailwind CSS. It has a simple interface for casual users and a powerful set of features and customization for advanced users.
 </p>
