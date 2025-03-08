@@ -6,7 +6,7 @@ https://app.milanote.com/1Tqkr91OF8wP1c?p=kGs1JaETxwG
 
 - [x] Todo Node
 - [x] Node Border on Selection
-- [ ] Image Properties Edit
+- [x] Image Properties Edit
 - [ ] Dashboard Page
 - [ ] Signin Signup Page
 - [ ] Markdown Support
@@ -20,3 +20,5 @@ https://app.milanote.com/1Tqkr91OF8wP1c?p=kGs1JaETxwG
 - [ ] Add Node Resize Orb gradient animation
 - [ ] Add Powered By React Flow, NextJs in Home Page
 - [ ] In ss section(Home Page) change ss with btn action like minimize, maximize, close
+- [ ] Minimap use different color for nodes and connections
+- [ ] Edge Properties Edit
