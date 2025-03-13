@@ -20,8 +20,8 @@ export default function TodoNode(props: NodeProps<TodoNodeProps>) {
     { id: `${props.data.todos.length + 1}`, text: '', completed: false }
   ])
 
-  const [width, setWidth] = useState(200)
-  const [height, setHeight] = useState(50)
+  const [width, setWidth] = useState(240)
+  const [height, setHeight] = useState(40)
 
   const selected = props.selected
 
@@ -72,6 +72,7 @@ export default function TodoNode(props: NodeProps<TodoNodeProps>) {
     })
 
     reactFlow.setNodes(nodes)
+    setHeight(37 * todos.length)
   }, [todos])
 
   return (
