@@ -52,6 +52,10 @@ const initialNodes: (TextNode | ImageNode | TodoNode | LinkNode)[] = [
 ]
 const initialEdges = [{ id: 'e1-2', source: '1', target: '2' }]
 
+const defaultEdgeOptions = {
+  type: 'smoothstep'
+}
+
 export default function Editor() {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes)
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges)
@@ -108,6 +112,7 @@ export default function Editor() {
           onEdgesChange={onEdgesChange}
           onConnect={onConnect}
           nodeTypes={nodeTypes}
+          defaultEdgeOptions={defaultEdgeOptions}
         >
           <Controls />
           <MiniMap />
