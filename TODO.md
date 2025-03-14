@@ -22,3 +22,4 @@ https://app.milanote.com/1Tqkr91OF8wP1c?p=kGs1JaETxwG
 - [ ] In ss section(Home Page) change ss with btn action like minimize, maximize, close
 - [ ] Minimap use different color for nodes and connections
 - [ ] Edge Properties Edit
+- [ ] Edge default style smoothstep
