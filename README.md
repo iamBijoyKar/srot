@@ -26,3 +26,11 @@
 - **NextJs**: NextJs is a React framework that allows you to build static and dynamic websites.
 - **Tailwind CSS**: Tailwind CSS is a utility-first CSS framework for building custom designs.
 - **Clerk**: Clerk is an authentication and user management service.
+
+## Inspiration 💡
+
+Srot is heavily inspired by [milamote](https://milamote.com/). Please support them by visiting their website and using their services. They have a great product and we are proud to be inspired by them.
+
+## Purpose 🎯
+
+The purpose of Srot is to provide a simple interface for casual users and a powerful set of features and customization for advanced users. And I also wanted to learn React Flow and create something cool with it.
