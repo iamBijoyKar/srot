@@ -34,6 +34,42 @@
   animation: gradient-animation 2s ease infinite;
 }
 
+.mac-open-animation {
+  animation: mac-open 0.7s ease-in-out forwards;
+}
+@keyframes mac-open {
+  0% {
+    transform: skew(0deg);
+    translate: -50% 50%;
+    scale: 0.3 0.5;
+    opacity: 0.5;
+  }
+  20% {
+    transform: skew(-0.2deg, 20deg);
+    translate: -50% 40%;
+    scale: 0.3 0.5;
+    opacity: 1;
+  }
+  50% {
+    transform: skew(0.5deg, 30deg);
+    /* scale: 0.4; */
+    translate: -50% 30%;
+    opacity: 1;
+  }
+  70% {
+    transform: skew(0.2deg, 20deg);
+    translate: -50% 20%;
+    scale: 0.7;
+    opacity: 1;
+  }
+  100% {
+    transform: skew(0);
+    scale: 1;
+    translate: 0 0;
+    opacity: 1;
+  }
+}
+
 @keyframes gradient-animation {
   0% {
     background-position: 0% 50%;
