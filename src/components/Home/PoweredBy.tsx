@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import AnimatedGlass from '../Utils/AnimatedGlass'
+import { FaBolt } from 'react-icons/fa'
 
 import nextJsWhiteImg from '@/assets/Next.js/nextjs.png'
 import nextjsOriginalImg from '@/assets/Next.js/Next.js_Logo_0.svg'
@@ -14,7 +15,9 @@ import vercelOriginalImg from '@/assets/Vercel/Vercel_Logo_0.svg'
 import reactFlowWhiteImg from '@/assets/ReactFlow/react-flow-w-nbg.png'
 import reactFlowOriginalImg from '@/assets/ReactFlow/react-flow-o-nbg.png'
 import stripeWhiteImg from '@/assets/Stripe/Stripe_idW8JhH8ft_0.svg'
-import stripeOriginalImg from '@/assets/Stripe/Stripe_idXemag1zN_0.svg'
+import stripeOriginalImg from '@/assets/Stripe/Stripe_id7qRMcZ8P_0.svg'
+import githubWhiteImg from '@/assets/GitHub/GitHub_Symbol_0.svg'
+import githubOriginalImg from '@/assets/GitHub/GitHub_Symbol_1.png'
 
 export default function PoweredBy() {
   return (
@@ -112,8 +115,21 @@ export default function PoweredBy() {
             className=" absolute top-[calc(50%-25px)] left-0 w-full opacity-0 group-hover:opacity-100 transition-all duration-500 scale-110 group-hover:drop-shadow-[0_0_10px_rgba(0,0,0,.6)] group-hover:-translate-y-2"
           />
           <h4 className=" text-slate-300 absolute top-[56%] left-1/3 opacity-0 group-hover:-translate-y-2 group-hover:opacity-100 transition-all duration-500 text-sm">
-            MongoDB
+            Tailwind Styles
           </h4>
+        </div>
+      </AnimatedGlass>
+      <AnimatedGlass
+        colors={['#FEBA17', '#F6DC43', '#FFB200', '#EB5B00', '#FFD95F']}
+        className="powered-by-glass"
+      >
+        <div className="w-[200px] h-[200px] relative z-50 flex justify-center items-center">
+          <div className="w-full h-full flex justify-center items-center flex-col gap-3 mt-8 rounded-full">
+            <FaBolt className=" w-full text-slate-300 group-hover:scale-110 group-hover:text-yellow-500 group-hover:-translate-y-1 transition-all duration-500 text-[80px] " />
+            <h4 className=" text-slate-300 opacity-0 group-hover:-translate-y-2 group-hover:opacity-100 transition-all duration-500 text-xl">
+              Powered By
+            </h4>
+          </div>
         </div>
       </AnimatedGlass>
       <AnimatedGlass
@@ -131,26 +147,7 @@ export default function PoweredBy() {
             className=" absolute top-[calc(50%-25px)] left-0 w-full opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:drop-shadow-[0_0_10px_rgba(0,0,0,.6)] group-hover:-translate-y-2"
           />
           <h4 className=" text-slate-300 absolute top-[65%] left-1/3 opacity-0 group-hover:-translate-y-2 group-hover:opacity-100 transition-all duration-500 text-sm">
-            NextJs
-          </h4>
-        </div>
-      </AnimatedGlass>
-      <AnimatedGlass
-        colors={['#d1dbe4', '#ced3d7', '#e2e2e4', '#646f77', '#000000']}
-      >
-        <div className="w-[200px] h-[200px] relative z-50 ">
-          <Image
-            src={vercelWhiteImg}
-            alt="Next.js"
-            className=" absolute top-[calc(50%-25px)] left-0 w-full opacity-100 group-hover:-translate-y-1 group-hover:opacity-0 transition-all duration-500"
-          />
-          <Image
-            src={vercelOriginalImg}
-            alt="Next.js"
-            className=" absolute top-[calc(50%-25px)] left-0 w-full opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:drop-shadow-[0_0_10px_rgba(0,0,0,.6)] group-hover:-translate-y-2"
-          />
-          <h4 className=" text-slate-300 absolute top-[65%] left-1/3 opacity-0 group-hover:-translate-y-2 group-hover:opacity-100 transition-all duration-500 text-sm">
-            NextJs
+            Vercel
           </h4>
         </div>
       </AnimatedGlass>
@@ -176,19 +173,12 @@ export default function PoweredBy() {
             className="w-[100px] absolute top-[calc(50%-45px)] left-[calc(50%-60px)] opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:drop-shadow-[0_0_10px_rgba(0,0,0,.6)] group-hover:-translate-y-2"
           />
           <h4 className=" text-slate-300 absolute top-[80%] left-1/3 opacity-0 group-hover:-translate-y-2 group-hover:opacity-100 transition-all duration-500 text-sm">
-            NextJs
+            React Flow
           </h4>
         </div>
       </AnimatedGlass>
       <AnimatedGlass
-        colors={[
-          '#d1dbe4',
-          '#ced3d7',
-          '#e2e2e4',
-          '#646f77',
-          '#FE0072',
-          '#E16099'
-        ]}
+        colors={['#865DFF', '#0A2540', '#635BFF', '#493D9E', '#4635B1']}
       >
         <div className="w-[200px] h-[200px] relative z-50 ">
           <Image
@@ -201,8 +191,27 @@ export default function PoweredBy() {
             alt="Next.js"
             className="w-full absolute top-[calc(50%-45px)] left-0 opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:drop-shadow-[0_0_10px_rgba(0,0,0,.6)] group-hover:-translate-y-2"
           />
-          <h4 className=" text-slate-300 absolute top-[80%] left-1/3 opacity-0 group-hover:-translate-y-2 group-hover:opacity-100 transition-all duration-500 text-sm">
-            NextJs
+          <h4 className=" text-slate-300 absolute top-[70%] left-1/3 opacity-0 group-hover:-translate-y-2 group-hover:opacity-100 transition-all duration-500 text-sm">
+            Payments
+          </h4>
+        </div>
+      </AnimatedGlass>
+      <AnimatedGlass
+        colors={['#d1dbe4', '#ced3d7', '#e2e2e4', '#646f77', '#000000']}
+      >
+        <div className="w-[200px] h-[200px] relative z-50 ">
+          <Image
+            src={githubWhiteImg}
+            alt="Next.js"
+            className=" absolute top-[calc(50%-45px)] left-[calc(50%-50px)] w-[50%] opacity-100 group-hover:-translate-y-1 group-hover:opacity-0 transition-all duration-500"
+          />
+          <Image
+            src={githubOriginalImg}
+            alt="Next.js"
+            className=" absolute top-[calc(50%-45px)] left-[calc(50%-50px)] w-[50%] opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:drop-shadow-[0_0_10px_rgba(0,0,0,.6)] group-hover:-translate-y-2"
+          />
+          <h4 className=" text-slate-300 absolute top-[85%] left-1/3 opacity-0 group-hover:-translate-y-2 group-hover:opacity-100 transition-all duration-500 text-sm">
+            Github
           </h4>
         </div>
       </AnimatedGlass>
