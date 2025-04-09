@@ -6,6 +6,7 @@ import HeroFlowNodes from '@/components/Home/HeroFlowNodes'
 import FeatureSection from '@/components/Home/Feature/FeatureSection'
 import ProductSS from '@/components/Home/ProductSS'
 import KeyPoints from '@/components/Home/KeyPoints'
+import PoweredBy from '@/components/Home/PoweredBy'
 import Footer from '@/components/Home/Footer'
 
 const barlow = Barlow({ weight: '800', subsets: ['latin'] })
@@ -48,6 +49,7 @@ export default function HomePage() {
       <FeatureSection />
       <ProductSS />
       <KeyPoints />
+      <PoweredBy />
       <Footer />
     </div>
   )

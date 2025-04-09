@@ -18,7 +18,7 @@ import type { TextNode, ImageNode, TodoNode, LinkNode } from '@/types'
 
 import '@xyflow/react/dist/style.css'
 
-const initialNodes: (TextNode | ImageNode | TodoNode | LinkNode)[] = [
+const initialNodes: Array<any> = [
   {
     id: '1',
     position: { x: 0, y: 300 },
