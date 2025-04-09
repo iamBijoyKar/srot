@@ -47,14 +47,9 @@ export default function ProductSS() {
   const [isHoveredInner, setIsHoveredInner] = useState(false) // for the inner div which is the app bar
   const [currentSSIndex, setCurrentSSIndex] = useState(0) // for the current screenshot index
 
-  const handleOnClick = () => {}
-
   return (
     <section className="container flex flex-col mx-auto p-4 justify-between items-center my-10">
-      <div
-        className="rounded-xl overflow-hidden shadow-lg drop-shadow-[0_3px_10px_rgb(var(--special-color))]
-      transition-all duration-100 "
-      >
+      <div className="rounded-xl overflow-hidden shadow-lg shadow-gray-400/30 drop-shadow-[0_20px_20px_rgba(230,230,230,0.1)] ">
         <div className="w-full h-full px-4 bg-primary-bg flex justify-between items-center">
           <div className="flex gap-2 items-center py-1 bg-primary-bg group">
             <div className="w-4 h-4 flex justify-center items-center rounded-full bg-slate-700 group-hover:bg-red-500 transition-all duration-200 ">
@@ -86,7 +81,7 @@ export default function ProductSS() {
             >
               <Image
                 src={img}
-                className={`rounded-b-xl mac-open-animation`}
+                className={`rounded-b-xl motion-opacity-in-0 `}
                 alt="Product Screenshot"
               />
             </div>
