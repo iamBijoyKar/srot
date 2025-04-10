@@ -12,6 +12,7 @@ import dragImg from '@/assets/drag-and-drop.png'
 import spiralImg from '@/assets/spiral.png'
 import trianglesImg from '@/assets/triangles.png'
 import exportImg from '@/assets/export.png'
+import lineDottedSvg from '@/assets/line-dotted.svg'
 
 const barlow = Barlow({ weight: '800', subsets: ['latin'] })
 const knewave = Knewave({ weight: '400', subsets: ['latin'] })
@@ -22,10 +23,15 @@ export default function FeatureSection() {
   return (
     <section className="container mx-auto p-4">
       <h1
-        className={`text-5xl text-center my-4 font-bold text-primary-text mb-8 ${barlow.className}`}
+        className={`text-5xl text-center my-4 font-bold text-primary-text mb-8`}
       >
         Why Choose{' '}
-        <span className={`text-brand-purple ${knewave.className}`}>Srot</span> ?
+        <span
+          className={` relative bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent`}
+        >
+          Srot
+        </span>{' '}
+        ?
       </h1>
       <div className="grid grid-cols-6 grid-rows-3 xl:grid-rows-2 gap-3 h-[125vh] sm:h-full">
         <div className="col-span-1 row-span-1 hidden lg:block lg:col-span-3 xl:col-span-1 ">
