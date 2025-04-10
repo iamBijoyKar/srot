@@ -23,9 +23,9 @@ import githubOriginalImg from '@/assets/GitHub/GitHub_Symbol_1.png'
 
 export default function PoweredBy() {
   return (
-    <section className="container mx-auto p-4 my-10 ">
+    <section className="container mx-auto p-4 my-10">
       <div className="w-full group relative mb-14">
-        <h2 className="text-center text-3xl font-bold leading-10 text-primary-text ">
+        <h2 className="text-center text-3xl font-bold leading-10 text-primary-text z-40">
           Srot uses some of the{' '}
           <span className="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-pink-500">
             {' '}
@@ -40,7 +40,7 @@ export default function PoweredBy() {
           </span>
           for you.
         </h2>
-        <div className="flex flex-col justify-center items-center ">
+        <div className="flex flex-col justify-center items-center z-40">
           <p className="text-slate-300 text-sm text-center sm:w-[500px] mt-4">
             Srot is built with the latest technologies and tools to ensure a
             smooth and efficient experience. We are constantly updating our
@@ -58,12 +58,12 @@ export default function PoweredBy() {
             </Link>
           </div>
         </div>
-        <div className="absolute top-1/2 left-1/2 -z-10 w-8 h-8 rounded-full bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border opacity-0 border-gray-200/20 blur-sm  drop-shadow-[0_20px_20px_rgba(230,230,230,0.1)] group-hover:translate-x-[20vw] group-hover:opacity-100 group-hover:translate-y-[50px] transition-all duration-500 "></div>
-        <div className="absolute top-1/2 left-1/2 -z-10 w-12 h-12 rounded-full bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border opacity-0 border-gray-200/20 blur-sm drop-shadow-[0_20px_20px_rgba(230,230,230,0.1)] group-hover:-translate-x-[20vw] group-hover:opacity-100 group-hover:translate-y-[50px] transition-all duration-500 "></div>
-        <div className="absolute top-1/2 left-1/2 -z-10 w-9 h-9 rounded-full bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border opacity-0 border-gray-200/20 blur-sm  drop-shadow-[0_20px_20px_rgba(230,230,230,0.1)] group-hover:translate-x-[20vw] group-hover:opacity-100 group-hover:-translate-y-[50px] transition-all duration-500 "></div>
-        <div className="absolute top-1/2 left-1/2 -z-10 w-7 h-7 rounded-full bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border opacity-0 border-gray-200/20 blur-sm  drop-shadow-[0_20px_20px_rgba(230,230,230,0.1)] group-hover:-translate-x-[20vw] group-hover:opacity-100 group-hover:-translate-y-[50px] transition-all duration-500 "></div>
-        <div className="absolute top-1/2 left-1/2 -z-10 w-11 h-11 rounded-full bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border opacity-0 border-gray-200/20 blur-sm  drop-shadow-[0_20px_20px_rgba(230,230,230,0.1)] group-hover:translate-x-[3vw] group-hover:opacity-100 group-hover:-translate-y-[120px] transition-all duration-500 "></div>
-        <div className="absolute top-1/2 left-1/2 -z-10 w-7 h-7 rounded-full bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border opacity-0 border-gray-200/20 blur-sm  drop-shadow-[0_20px_20px_rgba(230,230,230,0.1)] group-hover:translate-x-[5vw] group-hover:opacity-100 group-hover:translate-y-[90px] transition-all duration-500 "></div>
+        <div className="absolute top-1/2 left-1/2 z-10 w-8 h-8 rounded-full bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border opacity-0 border-gray-200/20 blur-sm  drop-shadow-[0_20px_20px_rgba(230,230,230,0.1)] group-hover:translate-x-[20vw] group-hover:opacity-100 group-hover:translate-y-[50px] transition-all duration-500 "></div>
+        <div className="absolute top-1/2 left-1/2 z-10 w-12 h-12 rounded-full bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border opacity-0 border-gray-200/20 blur-sm drop-shadow-[0_20px_20px_rgba(230,230,230,0.1)] group-hover:-translate-x-[20vw] group-hover:opacity-100 group-hover:translate-y-[50px] transition-all duration-500 "></div>
+        <div className="absolute top-1/2 left-1/2 z-10 w-9 h-9 rounded-full bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border opacity-0 border-gray-200/20 blur-sm  drop-shadow-[0_20px_20px_rgba(230,230,230,0.1)] group-hover:translate-x-[20vw] group-hover:opacity-100 group-hover:-translate-y-[50px] transition-all duration-500 "></div>
+        <div className="absolute top-1/2 left-1/2 z-10 w-7 h-7 rounded-full bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border opacity-0 border-gray-200/20 blur-sm  drop-shadow-[0_20px_20px_rgba(230,230,230,0.1)] group-hover:-translate-x-[20vw] group-hover:opacity-100 group-hover:-translate-y-[50px] transition-all duration-500 "></div>
+        <div className="absolute top-1/2 left-1/2 z-10 w-11 h-11 rounded-full bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border opacity-0 border-gray-200/20 blur-sm  drop-shadow-[0_20px_20px_rgba(230,230,230,0.1)] group-hover:translate-x-[3vw] group-hover:opacity-100 group-hover:-translate-y-[150px] transition-all duration-500 "></div>
+        <div className="absolute top-1/2 left-1/2 z-10 w-7 h-7 rounded-full bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border opacity-0 border-gray-200/20 blur-sm  drop-shadow-[0_20px_20px_rgba(230,230,230,0.1)] group-hover:translate-x-[5vw] group-hover:opacity-100 group-hover:translate-y-[90px] transition-all duration-500 "></div>
       </div>
       <div className="grid grid-cols-3 grid-rows-3 gap-4">
         <AnimatedGlass
