@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { RiArtboardLine } from 'react-icons/ri'
 import { LuWorkflow } from 'react-icons/lu'
 import { PiNotePencilBold } from 'react-icons/pi'
-import { Barlow, Knewave } from 'next/font/google'
+import { Barlow } from 'next/font/google'
 import Header from '@/components/Home/Header'
 import HeroFlowNodes from '@/components/Home/HeroFlowNodes'
 import FeatureSection from '@/components/Home/Feature/FeatureSection'
@@ -12,11 +12,10 @@ import PoweredBy from '@/components/Home/PoweredBy'
 import Footer from '@/components/Home/Footer'
 
 const barlow = Barlow({ weight: '800', subsets: ['latin'] })
-const knewave = Knewave({ weight: '400', subsets: ['latin'] })
 
 export default function HomePage() {
   return (
-    <div className="">
+    <div className="bg-primary-bg">
       <Header />
       <section className="container mx-auto px-4 flex justify-between items-center">
         <div className="">
