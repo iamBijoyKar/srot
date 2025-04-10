@@ -5,6 +5,7 @@ import { MdOutlineMoreHoriz } from 'react-icons/md'
 import { IoClose } from 'react-icons/io5'
 import { FaWindowMinimize } from 'react-icons/fa6'
 import { TbCaretLeftRightFilled } from 'react-icons/tb'
+
 import Tooltip from '../Utils/Tooltip'
 
 import prductSSImg from '@/assets/product-ss.png'
@@ -48,7 +49,7 @@ export default function ProductSS() {
   const [currentSSIndex, setCurrentSSIndex] = useState(0) // for the current screenshot index
 
   return (
-    <section className="container flex flex-col mx-auto p-4 justify-between items-center my-10">
+    <section className="container flex flex-col mx-auto p-4 justify-between items-center mb-10">
       <div className="rounded-xl overflow-hidden shadow-lg shadow-gray-400/30 drop-shadow-[0_20px_20px_rgba(230,230,230,0.1)] ">
         <div className="w-full h-full px-4 bg-primary-bg flex justify-between items-center">
           <div className="flex gap-2 items-center py-1 bg-primary-bg group">

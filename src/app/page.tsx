@@ -1,5 +1,7 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import { RiArtboardLine } from 'react-icons/ri'
+import { LuWorkflow } from 'react-icons/lu'
+import { PiNotePencilBold } from 'react-icons/pi'
 import { Barlow, Knewave } from 'next/font/google'
 import Header from '@/components/Home/Header'
 import HeroFlowNodes from '@/components/Home/HeroFlowNodes'
@@ -16,10 +18,10 @@ export default function HomePage() {
   return (
     <div className="">
       <Header />
-      <section className="container mx-auto p-4 flex justify-between items-center">
-        <div className="mt-8">
+      <section className="container mx-auto px-4 flex justify-between items-center">
+        <div className="">
           <h1
-            className={`text-6xl leading-[5rem] font-bold text-primary-text ${barlow.className}`}
+            className={`text-6xl leading-[5rem] font-bold text-primary-text pt-2 ${barlow.className}`}
           >
             Design Workflows <br /> Effortlessly
           </h1>
@@ -41,13 +43,32 @@ export default function HomePage() {
               Learn More
             </Link>
           </div>
+          <div className="w-full h-full mt-10">
+            <h3 className="text-md text-start font-medium text-slate-300 mb-2">
+              Use Srot to build
+            </h3>
+            <div className="w-full flex items-center gap-2 mb-4">
+              <div className="flex w-fit justify-center items-center gap-2 border border-slate-500/50 rounded-lg pr-2 py-1">
+                <RiArtboardLine className="w-6 h-6 text-primary-text rotate-6 ml-2" />
+                <p className="text-primary-text text-sm">Moodboard</p>
+              </div>
+              <div className="flex w-fit justify-center items-center gap-2 border border-slate-500/50 rounded-lg pr-2 py-1">
+                <LuWorkflow className="w-6 h-6 text-primary-text ml-2" />
+                <p className="text-primary-text text-sm">Flow Diagram</p>
+              </div>
+              <div className="flex w-fit justify-center items-center gap-2 border border-slate-500/50 rounded-lg pr-2 py-1">
+                <PiNotePencilBold className="w-6 h-6 scale-95 text-primary-text ml-2" />
+                <p className="text-primary-text text-sm">Notes</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="w-[50vw] h-[80vh] text-slate-500 hidden lg:block">
+        <div className="w-[50vw] h-[75vh] text-slate-500 hidden lg:block">
           <HeroFlowNodes />
         </div>
       </section>
-      <FeatureSection />
       <ProductSS />
+      <FeatureSection />
       <KeyPoints />
       <PoweredBy />
       <Footer />

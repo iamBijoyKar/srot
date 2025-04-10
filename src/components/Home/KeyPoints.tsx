@@ -1,7 +1,10 @@
+import Image from 'next/image'
 import { FaMarkdown } from 'react-icons/fa'
 import { MdOutlineDashboardCustomize } from 'react-icons/md'
 import { IoMdCloud } from 'react-icons/io'
 import { Barlow } from 'next/font/google'
+
+import productShowcaseGif from '@/assets/product-showcase.gif'
 
 const barlow = Barlow({ weight: '800', subsets: ['latin'] })
 
@@ -57,6 +60,14 @@ export default function KeyPoints() {
             </p>
           </div>
         </div>
+      </div>
+      <div className="w-full flex justify-center items-center mt-2 mb-10">
+        <Image
+          src={productShowcaseGif}
+          alt="Product Showcase"
+          className="rounded-lg mt-10 w-full h-full shadow-lg"
+          priority
+        />
       </div>
     </section>
   )
